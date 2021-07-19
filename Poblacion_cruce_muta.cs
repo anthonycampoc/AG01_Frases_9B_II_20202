@@ -73,10 +73,6 @@ namespace AG01_Frases_9B_II_2020
                 if (valor_hijo > valor_individuo_a) individuos[individuo_a] = hijo;
                 if (valor_hijo > valor_individuo_b) individuos[individuo_b] = hijo;
 
-                
-
-
-
             }
             //Despues de los ciclos, se busca el mejor individuo
 
