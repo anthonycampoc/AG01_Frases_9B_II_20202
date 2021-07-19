@@ -8,7 +8,7 @@ namespace AG01_Frases_9B_II_2020
 {
     class Cadena
     {
-        // retornar un caracter al azar
+        // retornar un caracter al azarr
 
         private char LetraAzar(Random azar)
         {
