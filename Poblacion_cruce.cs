@@ -81,6 +81,7 @@ namespace AG01_Frases_9B_II_2020
             Console.WriteLine("Ultima generacion de Individuos");
             Console.WriteLine("-------------------------");
 
+
             for (int cont = 1; cont < individuos.Count; cont++)
             {
                 int valor_individuo = objCadena.EvaluacionCadena(cad_original, individuos[cont]);
@@ -89,11 +90,7 @@ namespace AG01_Frases_9B_II_2020
                 {
                     mejor_individuos = cont;
                     mejor_puntaje = valor_individuo;
-
-
-                }
-
-               
+                } 
                 Console.WriteLine(cont + " .- " + individuos[cont]);
             }
             Console.WriteLine("La posicion del individuo mejor adptado es: " + mejor_individuos);
