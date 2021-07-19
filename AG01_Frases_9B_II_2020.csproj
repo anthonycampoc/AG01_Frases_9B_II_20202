@@ -47,6 +47,7 @@
     <Compile Include="Poblacion_cruce_muta.cs" />
     <Compile Include="Poblacion_muta.cs" />
     <Compile Include="Poblacion_cruce.cs" />
+    <Compile Include="problacion_d.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
