@@ -43,20 +43,13 @@ namespace AG01_Frases_9B_II_2020
             {
                 //tomar 2 individuos al azar
                 int individuo_a = azar.Next(individuos.Count);
-                int individuo_b;
-
-                do
-                {
-                    individuo_b = azar.Next(individuos.Count);
-                } while (individuo_a == individuo_b);//verificar que los individuos sean distintos 
+                int individuo_b = individuo_a; 
 
                 //evaluar la adaptacion de los individuos, proceso de mutacion********
                 int valor_individuo_a = objCadena.EvaluacionCadena(cad_original, individuos[individuo_a]);
                 int valor_individuo_b = objCadena.EvaluacionCadena(cad_original, individuos[individuo_b]);
 
-                /*Console.WriteLine("        Seleccionados        ");
-                Console.WriteLine("individuo A: " + individuos[individuo_a]);
-                Console.WriteLine("individuo B: " + individuos[individuo_b]);*/
+           
 
                 // si individuo A esta mejor adaptado que B, entonces se elimina B, se copia A y se muta
 
@@ -90,7 +83,10 @@ namespace AG01_Frases_9B_II_2020
                 }
                 if (individuos[cont] == cad_original)
                 {
-                    Console.WriteLine( " VALIDACION DE CADENA ENCONTRA FIN DEL PROGRAMA " );
+                    Console.WriteLine("-------------------------");
+                    Console.WriteLine("-------MUTACION----------");
+                    Console.WriteLine("-------------------------");
+                    Console.WriteLine( " VALIDACION DE CADENA ENCONTRADA FIN DEL PROGRAMA " );
                     Console.WriteLine(cont + " .- " + individuos[cont]);
                     Console.ReadKey();
                 }

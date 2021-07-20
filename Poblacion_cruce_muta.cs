@@ -59,10 +59,12 @@ namespace AG01_Frases_9B_II_2020
 
 
                 string hijo = parte_A + parte_B;
+                string hijo2 = parte_A + parte_B;
 
                 //mutamos el hijo
 
                 hijo = objCadena.MutaCadena(azar, hijo);
+
 
                 //Evaluacion de los padre e hijos, seleccionar el peor  o los peores padres
 

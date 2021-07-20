@@ -12,7 +12,7 @@ namespace AG01_Frases_9B_II_2020
 
         private char LetraAzar(Random azar)
         {
-            string Permitido = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ áéúíóúÁÉÍÓÚÑñ¿?¡!äëïöüÄËÏÖÜ";
+            string Permitido = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ áéúíóúÁÉÍÓÚÑñ¿?¡!äëïöüÄËÏÖÜ,";
             return Permitido[azar.Next(Permitido.Length)];
         }
 

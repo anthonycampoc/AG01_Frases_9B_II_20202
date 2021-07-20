@@ -20,6 +20,11 @@ namespace AG01_Frases_9B_II_2020
 
         //Proceso de Algoritmo Genetico
 
+        public int Random (int max, int min)
+        {
+            Random azar = new Random();
+            return azar.Next() * (max - min) - min;
+        }
         public string Proceso(string cad_original, int total_individuos, int total_ciclos)
         {
             Cadena objCadena = new Cadena();
@@ -44,12 +49,15 @@ namespace AG01_Frases_9B_II_2020
                 //tomar 2 individuos al azar
                 int individuo_a = azar.Next(individuos.Count);
                 int individuo_b;
-                int individuo_c;
+               // int individuo_c;
+              
 
                 do
                 {
                     individuo_b = azar.Next(individuos.Count);
-                    individuo_c = azar.Next(individuos.Count);
+                    //individuo_c = azar.Next(individuos.Count);
+
+
                 } while (individuo_a == individuo_b);//verificar que los individuos sean distintos 
 
 
@@ -59,24 +67,25 @@ namespace AG01_Frases_9B_II_2020
                 int pos_Azar = azar.Next(cad_original.Length);
 
                 string parte_A = individuos[individuo_a].Substring(0, pos_Azar);
-                string parte_C = individuos[individuo_c].Substring(pos_Azar);
                 string parte_B = individuos[individuo_b].Substring(pos_Azar);
+                //string parte_C = individuos[individuo_c].Substring(pos_Azar);
 
-                string hijo = parte_A + parte_B+ parte_C;
-                string hijoa = parte_B + parte_A; 
+                string hijo = parte_A + parte_B;
+                
 
 
                 //Evaluacion de los padre e hijos, seleccionar el peor  o los peores padres
 
                 int valor_individuo_a = objCadena.EvaluacionCadena(cad_original, individuos[individuo_a]);
                 int valor_individuo_b = objCadena.EvaluacionCadena(cad_original, individuos[individuo_b]);
+                //int valor_individuo_c = objCadena.EvaluacionCadena(cad_original, individuos[individuo_c]);
                 int valor_hijo = objCadena.EvaluacionCadena(cad_original, hijo);
 
                 if (valor_hijo > valor_individuo_a) individuos[individuo_a] = hijo;
                 if (valor_hijo > valor_individuo_b) individuos[individuo_b] = hijo;
+                //if (valor_hijo > valor_individuo_c) individuos[individuo_c] = hijo;
 
 
-           
             }
             //Despues de los ciclos, se busca el mejor individuo
 
@@ -95,9 +104,21 @@ namespace AG01_Frases_9B_II_2020
                 {
                     mejor_individuos = cont;
                     mejor_puntaje = valor_individuo;
-                } 
+                }
+
+                if (individuos[cont] == cad_original)
+                {
+                    Console.WriteLine("-------------------------");
+                    Console.WriteLine("-------CRUCE----------");
+                    Console.WriteLine("-------------------------");
+                    Console.WriteLine(" VALIDACION DE CADENA ENCONTRADA FIN DEL PROGRAMA ");
+                    Console.WriteLine(cont + " .- " + individuos[cont]);
+                    Console.ReadKey();
+                }
                 Console.WriteLine(cont + " .- " + individuos[cont]);
             }
+
+            
             Console.WriteLine("-------------------------");
             Console.WriteLine("-----CRUCE-----------");
             Console.WriteLine("-------------------------");

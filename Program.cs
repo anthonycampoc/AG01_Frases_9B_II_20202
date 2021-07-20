@@ -11,11 +11,11 @@ namespace AG01_Frases_9B_II_2020
     {
         static void Main()
         {
-            string cad_original = "Estamos en Esmeraldas";
+            string cad_original = "Nuestras virtudes y nuestros defectos son inseparables, como la fuerza y la materia";
             string mejor_individuo;
 
             Stopwatch tiempo = new Stopwatch();
-
+            tiempo.Start();
 
             Console.WriteLine("Ingrese el total de individuos");
             int total_individuos = Convert.ToInt32(Console.ReadLine());
@@ -52,10 +52,11 @@ namespace AG01_Frases_9B_II_2020
 
 
 
-           
-            TimeSpan ts = tiempo.Elapsed;
-            Console.WriteLine("Tiempo de demora: {0}", ts);
             Console.WriteLine(mejor_individuo);
+          
+            tiempo.Stop();
+            Console.WriteLine("Tiempo de demora: {0}", tiempo.ElapsedMilliseconds);
+            
             Console.ReadKey();
         }
 
