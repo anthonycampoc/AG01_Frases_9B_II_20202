@@ -82,7 +82,7 @@ namespace AG01_Frases_9B_II_2020
             Console.WriteLine("Ultima generacion de Individuos");
             Console.WriteLine("-------------------------");
 
-           for (int cont = 1; cont < 50; cont++)
+           /*for (int cont = 1; cont < 50; cont++)
           {
               int valor_individuo = objCadena.EvaluacionCadena(cad_original, individuos[cont]);
 
@@ -93,9 +93,9 @@ namespace AG01_Frases_9B_II_2020
               }
 
               Console.WriteLine(cont + " .- " + individuos[cont]);
-          }
+          }*/
 
-            /*for (int cont = 1; cont < individuos.Count; cont++)
+            for (int cont = 1; cont < individuos.Count; cont++)
             {
                 int valor_individuo = objCadena.EvaluacionCadena(cad_original, individuos[cont]);
 
@@ -106,7 +106,10 @@ namespace AG01_Frases_9B_II_2020
                 }
 
                 Console.WriteLine(cont + " .- " + individuos[cont]);
-            }*/
+            }
+            Console.WriteLine("-------------------------");
+            Console.WriteLine("-----MUTACION CRUCE-----------");
+            Console.WriteLine("-------------------------");
             Console.WriteLine("La posicion del individuo mejor adptado es: " + mejor_individuos);
             return individuos[mejor_individuos];
         }

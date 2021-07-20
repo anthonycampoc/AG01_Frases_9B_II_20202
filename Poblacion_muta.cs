@@ -54,9 +54,9 @@ namespace AG01_Frases_9B_II_2020
                 int valor_individuo_a = objCadena.EvaluacionCadena(cad_original, individuos[individuo_a]);
                 int valor_individuo_b = objCadena.EvaluacionCadena(cad_original, individuos[individuo_b]);
 
-                Console.WriteLine("        Seleccionados        ");
+                /*Console.WriteLine("        Seleccionados        ");
                 Console.WriteLine("individuo A: " + individuos[individuo_a]);
-                Console.WriteLine("individuo B: " + individuos[individuo_b]);
+                Console.WriteLine("individuo B: " + individuos[individuo_b]);*/
 
                 // si individuo A esta mejor adaptado que B, entonces se elimina B, se copia A y se muta
 
@@ -97,6 +97,9 @@ namespace AG01_Frases_9B_II_2020
 
                 Console.WriteLine(cont + " .- " + individuos[cont]);
             }
+            Console.WriteLine("-------------------------");
+            Console.WriteLine("-----MUTACION-----------");
+            Console.WriteLine("-------------------------");
             Console.WriteLine("La posicion del individuo mejor adptado es: "+ mejor_individuos);
             return individuos[mejor_individuos];
         }

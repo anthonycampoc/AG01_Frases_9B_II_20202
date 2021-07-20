@@ -44,10 +44,12 @@ namespace AG01_Frases_9B_II_2020
                 //tomar 2 individuos al azar
                 int individuo_a = azar.Next(individuos.Count);
                 int individuo_b;
+                int individuo_c;
 
                 do
                 {
                     individuo_b = azar.Next(individuos.Count);
+                    individuo_c = azar.Next(individuos.Count);
                 } while (individuo_a == individuo_b);//verificar que los individuos sean distintos 
 
 
@@ -57,9 +59,12 @@ namespace AG01_Frases_9B_II_2020
                 int pos_Azar = azar.Next(cad_original.Length);
 
                 string parte_A = individuos[individuo_a].Substring(0, pos_Azar);
+                string parte_C = individuos[individuo_c].Substring(pos_Azar);
                 string parte_B = individuos[individuo_b].Substring(pos_Azar);
 
-                string hijo = parte_A + parte_B;
+                string hijo = parte_A + parte_B+ parte_C;
+                string hijoa = parte_B + parte_A; 
+
 
                 //Evaluacion de los padre e hijos, seleccionar el peor  o los peores padres
 
@@ -93,6 +98,9 @@ namespace AG01_Frases_9B_II_2020
                 } 
                 Console.WriteLine(cont + " .- " + individuos[cont]);
             }
+            Console.WriteLine("-------------------------");
+            Console.WriteLine("-----CRUCE-----------");
+            Console.WriteLine("-------------------------");
             Console.WriteLine("La posicion del individuo mejor adptado es: " + mejor_individuos);
             return individuos[mejor_individuos];
         }
